@@ -254,7 +254,7 @@ class RCTVideo extends RCTView {
   }
 
   sendEvent(eventName, payload) {
-    const event = new RCTVideoEvent(eventName, this.reactTag, 0, payload);
+    const event = new RCTVideoEvent(eventName, this.reactTag, payload);
     this.eventDispatcher.sendEvent(event);
   }
 
