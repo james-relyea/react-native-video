@@ -3,7 +3,6 @@
 interface RCTEvent {
     viewTag: number;
     eventName: string;
-    coalescingKey: number;
   
     canCoalesce(): boolean;
     coalesceWithEvent(event: RCTEvent): RCTEvent;
@@ -15,26 +14,19 @@ interface RCTEvent {
 export default class RCTVideoEvent implements RCTEvent {
   viewTag: number;
   eventName: string;
-  coalescingKey: number;
 
   constructor(
     eventName: string,
     reactTag: number,
-    coalescingKey: number,
     data: ?Object
   ) {
     this.viewTag = reactTag;
     this.eventName = eventName;
-    this.coalescingKey = coalescingKey;
     this.data = data;
   }
 
   canCoalesce(): boolean {
     return false;
-  }
-
-  coalesceWithEvent(event: RCTEvent): RCTEvent {
-    return;
   }
 
   moduleDotMethod(): string {
@@ -48,9 +40,5 @@ export default class RCTVideoEvent implements RCTEvent {
       this.data
     ];
     return args;
-  }
-
-  coalescingKey(): number {
-    return this.coalescingKey;
   }
 }
