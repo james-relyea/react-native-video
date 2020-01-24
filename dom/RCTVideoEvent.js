@@ -5,7 +5,6 @@ interface RCTEvent {
     eventName: string;
   
     canCoalesce(): boolean;
-    coalesceWithEvent(event: RCTEvent): RCTEvent;
   
     moduleDotMethod(): string;
     arguments(): Array<any>;
