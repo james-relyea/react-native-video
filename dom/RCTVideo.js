@@ -202,7 +202,7 @@ class RCTVideo extends RCTView {
         orientation: width >= height ? "landscape" : "portrait"
       }
     };
-    this.sendEvent("topVideoLoad", payload);
+    //this.sendEvent("topVideoLoad", payload);
   }
 
   onReadyForDisplay = () => {
